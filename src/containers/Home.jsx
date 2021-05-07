@@ -1,9 +1,7 @@
 import React, {useState, useEffect} from "react";
 import useInitialState from '../Hooks/useInitialState';
 // components
-import Header from "../components/Header";
 import Search from "../components/Search";
-import Footer from '../components/Footer';
 // component view 
 import Categories from "../components/Categories"
 import Carousel from "../components/Carousel";
@@ -13,12 +11,13 @@ import CarouselItem from "../components/CarouselItem"
 import '../assets/style/App.scss';
 
 
-const API = 'http://localhost:3000/initalState'
-const App = () => {
+const API = 'http://localhost:3000/initalState';
+
+const Home = () => {
    const initialState = useInitialState(API);
-   return(
-   <div className="root">
-      <Header />
+   
+   return (
+   <>
          <Search />
          {initialState.mylist?.length > 0 && (
           <Categories title="My List">
@@ -51,8 +50,7 @@ const App = () => {
          } 
          </Carousel>
       </Categories>
-      <Footer />
-      </div>
+      </>
    )
 }
-export default App;
+export default Home;
