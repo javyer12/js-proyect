@@ -1,0 +1,11 @@
+@import "./Vars.scss";
+@import "./Medias.scss";
+body {
+  margin: 0;
+  font-family: $theme-font;
+  background-color: $background-color;
+}
+
+* {
+  box-sizing: border-box;
+}
