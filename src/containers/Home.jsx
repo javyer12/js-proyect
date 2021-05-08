@@ -1,28 +1,27 @@
 import React, {useState, useEffect} from "react";
-import useInitialState from '../Hooks/useInitialState';
+import { connect } from 'react-redux'
 // components
 import Search from "../components/Search";
 // component view 
 import Categories from "../components/Categories"
 import Carousel from "../components/Carousel";
 import CarouselItem from "../components/CarouselItem"
+import useInitialState from '../Hooks/useInitialState';
 
 // style
 import '../assets/style/App.scss';
 
 
-const API = 'http://localhost:3000/initalState';
 
-const Home = () => {
-   const initialState = useInitialState(API);
+const Home = ({myList, trends, originals}) => {
    
    return (
    <>
          <Search />
-         {initialState.mylist?.length > 0 && (
+         {myList?.length > 0 && (
           <Categories title="My List">
                <Carousel >
-                  {initialState.mylist?.map(item =>
+                  {myList?.map(item =>
                         <CarouselItem key={item.id}{...item}/>
                      )
                   }
@@ -32,7 +31,7 @@ const Home = () => {
 {/*  ...item, lo que hace es que, una vez identificados todos los id de los item, me envia todos los que existan */}
       <Categories title='Trend' >
             <Carousel >
-               { initialState.trends?.map(item => 
+               {trends?.map(item => 
             <CarouselItem key={item.id}{...item} />
                      
                   )
@@ -42,8 +41,7 @@ const Home = () => {
          
       <Categories title='Original' >
             <Carousel >
-            {
-               initialState.originals?.map(item => 
+            {originals?.map(item => 
             <CarouselItem key={item.id}{...item} />
                      
                   )
@@ -53,4 +51,14 @@ const Home = () => {
       </>
    )
 }
-export default Home;
+
+
+// export default Home;traer solo los elementos que se van a nececitar
+const mapStateToProps = state => {
+   return {
+      myList: state.myList,
+      trends: state.trends,
+      originals: state.originals,
+   }
+}
+export default connect(mapStateToProps, null)(Home)
