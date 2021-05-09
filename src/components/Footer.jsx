@@ -6,7 +6,7 @@ const Footer = () => (
     
   <footer className="footer">
   <a href="/">Terminos de uso</a>
-  <a href="/">Declaración de privacidad</a>
+  <a href="/">Help</a>
   <a href="/">F.G.cha</a>
 </footer>
 )
