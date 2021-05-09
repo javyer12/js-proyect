@@ -1,23 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import connect from "react-redux";
-import setFavorite from "../actions"
+import { connect } from "react-redux";
+import {setFavorite, deleteFavorite} from '../actions/index'
 // style 
 import '../assets/style/components/CarouselItem.scss';
 // media 
 import playIcon from '../assets/static/play-icon.png';
 import plusIcon from '../assets/static/plus-icon.png';
-
+import deleteIcon from '../assets/static/delete.png';
 const CarouselItem = (props)=>{
-    const { cover, title, year, contentRating, duration } = props;
+    const { id, cover, title, year, contentRating, duration, isList } = props;
     const handleSetFavorite = () => {
         props.setFavorite(
             {
-                cover, title, year, contentRating, duration    
+                id, cover, title, year, contentRating, duration    
             }
         )
     }
-
+    const handleDeleteFavorite = (itemId) => {
+        props.deleteFavorite(itemId)
+    }
     return (
     <div className="carousel-item">
             <img
@@ -25,22 +27,32 @@ const CarouselItem = (props)=>{
                 src={cover}
                 alt={title} />
           <div className="carousel-item__details">
-             <div>
-            <img
-                className="carousel-item__details--img"
-                src={playIcon}
-                alt="Play Icon" />
-            <img
-                className="carousel-item__details--img"
-                src={plusIcon}
-                alt="Plus Icon"
-                onClick={handleSetFavorite}/>
-             </div>
+                <div>
+<img
+   className="carousel-item__details--img"
+   src={playIcon}
+   alt="Play Icon" />    
+                    
+{isList ?
+    <img
+    className="carousel-item__details--img"
+    src={deleteIcon}
+    alt="delete icon"
+    onClick={() => handleDeleteFavorite(id)}
+         /> :
+     <img
+    className="carousel-item__details--img"
+    src={plusIcon}
+    alt="Plus Icon"
+    onClick={handleSetFavorite} />       
+                    }
+                    
+     </div>
             <p className="carousel-item__details--title">{title}</p>
             <p className="carousel-item__details--subtitle">
                 {`${year} ${contentRating} ${duration}`}
             </p>
-          </div>
+     </div>
     </div>
    );
    }
@@ -51,8 +63,8 @@ CarouselItem.prototype = {
     contentRating: PropTypes.string,
     duration: PropTypes.number,
 }
-// export default CarouselItem;
 const mapDispatchToProps =  {
     setFavorite,
+    deleteFavorite,
 }
-export default connect(null,mapDispatchToProps)(CarouselItem)
+export default connect( null, mapDispatchToProps)(CarouselItem)

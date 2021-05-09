@@ -21,7 +21,9 @@
   height: 50px;
   border-radius: 10px;
 }
-
+.gravatar {
+  border-radius: 20px;
+}
 .header__menu {
   margin-right: 30px;
 }
@@ -29,25 +31,30 @@
 .header__menu ul {
   display: none;
   list-style: none;
-  margin: 0px 0px 0px -14px;
+  margin: 0px 0px 0px 0px;
   padding: 0px;
   position: absolute;
   width: 100px;
   text-align: right;
 }
-
+.hover-header {
+  background-color: white;
+  border-radius: 10px;
+  text-align: right;
+}
 .header__menu:hover ul,
 ul:hover {
   display: block;
 }
 
 .header__menu li {
-  margin: 10px 0px;
+  margin: 4px 6px;
 }
 
 .header__menu li a {
-  color: white;
+  color: rgb(0, 0, 0);
   text-decoration: none;
+  text-align: right;
 }
 
 .header__menu li a:hover {
