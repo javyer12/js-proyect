@@ -47,7 +47,7 @@ const Header = props => {
            : null 
           }
           {hastUser ?
-           <li><a href='#logout' onClick={handleLogout}>Log Out</a></li>
+           <li><a href='#logout' onClick={handleLogout}>Logout</a></li>
             :
            <li>
           <Link to='/login'>Log in</Link>
