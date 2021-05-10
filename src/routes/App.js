@@ -16,9 +16,9 @@ const App = () => (
  <Route exact path="/login" component={Login}/>
  <Route exact path="/register" component={Register}/>
             <Route component={NotFound} />
+ <Route exact path="/player/:id" component={Player}/>
         </Switch>
         </Layout>
- <Route exact path="/player/:id" component={Player}/>
  </BrowserRouter>
 )
 export default App;

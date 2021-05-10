@@ -19,20 +19,20 @@ const initialState = {
               "year": 2009,
               "contentRating": "16+",
               "duration": 164,
-              "cover":  "./assets/static/fg.mp4",
+              "cover":  "https://amuraworld.com/images/articles/133-botswana/132-leon-africano/132-leon-africano1.jpg",
               "description": "Vestibulum ac est lacinia nisi venenatis tristique",
               "source": "./assets/static/fg.mp4"
             },
             {
               "id": 6,
               "slug": "tvshow-3",
-              "title": "Instinct",
-              "type": "Adventure",
+              "title": "The Champion 21-22",
+              "type": "football",
               "language": "English",
               "year": 2002,
               "contentRating": "16+",
               "duration": 137,
-              "cover": "http://dummyimage.com/800x600.png/302140/ffffff",
+              "cover": "https://img.uefa.com/imgml/uefacom/ucl/social/og-default.jpg",
               "description": "Vestibulum ac est lacinia nisi venenatis tristique",
               "source": "https://mdstrm.com/video/58333e214ad055d208427db5.mp4"
             },
@@ -60,7 +60,7 @@ const initialState = {
               "duration": 194,
               "cover": "http://dummyimage.com/800x600.png/B36F20/ffffff",
               "description": "Vestibulum ac est lacinia nisi venenatis tristique",
-              "source": "https://mdstrm.com/video/58333e214ad055d208427db5.mp4"
+              "source": "https://www.youtube.com/watch?v=kXYiU_JCYtU"
             },
             {
               "id": 9,

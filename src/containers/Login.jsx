@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import googleIcon from '../assets/static/google-icon.png'
 import twitterIcon from '../assets/static/twitter-icon.png'
 import { loginRequest } from '../actions/index';
-
+import Header from '../components/Header';
 const Login = props => {
   const [ form, setValues ] = useState({
     email: '',
@@ -24,6 +24,8 @@ const Login = props => {
     props.history.push('/')
   }
   return (
+    <>
+      <Header isLogin />
     <section className="login">
       <section className="login__container">
         <h2>Inicia sesión</h2>
@@ -54,10 +56,11 @@ const Login = props => {
           <div><img src={googleIcon} /> Inicia sesión con Google</div>
           <div><img src={twitterIcon} /> Inicia sesión con Twitter</div>
         </section>
-        <p className="login__container--register">No tienes ninguna cuenta
+        <p className="login__container--register">No tienes ninguna cuenta {''}
       <Link to="/register">Regístrate</Link></p>
       </section>
-    </section>
+      </section>
+      </>
   )
 }
 

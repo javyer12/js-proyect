@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from 'react-redux'
 //connect provee el estado a el componnete
+import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 import { logoutRequest } from "../actions/index";
 import '../assets/style/App.scss';
@@ -14,15 +15,18 @@ import { PropTypes } from "prop-types";
 
 
 const Header = props => {
-  const { user } = props;
+  const { user, isLogin, isRegister } = props;
   const hastUser = Object.keys(user).length > 0;
   
   const handleLogout = () => {
     props.logoutRequest({})
   }
-  
+  const headerClass = classNames('header', {
+    isLogin,
+    isRegister,
+  })
   return (
-    <header className="header">
+    <header className={ headerClass}>
       <Link to='/'>
         <img className="header__img" src={logo} alt="Platzi Video" />
       </Link>

@@ -22,14 +22,14 @@ const Player = props =>{
           <button type="button" onClick={()=>props.history.goBack()}>Regresar</button>
           </div>
         </div>
-    ) :<NotFound />
+    ) : <NotFound />
 }
 const mapStateToProps = state =>{
   return{
-     playing:state.playing
+    playing: state.playing,
   }
 }
 const mapDispatchToProps ={
-  getVideoSource
+  getVideoSource,
 }
 export default connect( mapStateToProps, mapDispatchToProps) (Player);
