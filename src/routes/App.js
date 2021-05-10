@@ -4,7 +4,9 @@ import Home from "../containers/Home"
 import Login from '../containers/Login';
 import Register from '../containers/Register';
 import NotFound from '../containers/NotFound';
+import Player from "../containers/Player";
 import Layout from '../components/Layout';
+
 
 const App = () => (
     <BrowserRouter>
@@ -16,6 +18,7 @@ const App = () => (
             <Route component={NotFound} />
         </Switch>
         </Layout>
+ <Route exact path="/player/:id" component={Player}/>
  </BrowserRouter>
 )
 export default App;
