@@ -9,7 +9,7 @@ import '../assets/style/components/Header.scss';
 // media 
 import { gravatar } from '../utils/gravatar';
 import userIcon from '../assets/static/user-icon.png';
-import logo from '../assets/static/physoft.png'
+import logo from '../assets/static/logo-platzi-video-colors.png'
 import { PropTypes } from "prop-types";
 
 
